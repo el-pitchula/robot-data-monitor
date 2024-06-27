@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Projeto Robô</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: calc(100vh - 50px);
+        }
+        .section {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 300px;
+            width: 100%;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Dashboard</h1>
+    </div>
+    <div class="container">
+        <div class="section">
+            <h2>Monitoramento Serial</h2>
+            <button class="button">Atualizar Dados</button>
+        </div>
+        <div class="section">
+            <h2>Monitoramento Plotter</h2>
+            <button class="button">Exportar Dados</button>
+        </div>
+        <div class="section">
+            <h2>Visão de Câmera</h2>
+            <button class="button">Iniciar</button>
+        </div>
+    </div>
+</body>
+</html>

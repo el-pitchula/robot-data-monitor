@@ -1,0 +1,99 @@
+@startuml
+
+!define POSTMAN_MARK "⮭"
+!define HTTP_GET "<<GET>>"
+!define HTTP_POST "<<POST>>"
+!define HTTP_DELETE "<<DELETE>>"
+
+package Authentication {
+  class Login {
+    - user: String
+    - pass: String
+    - perfil: Perfil
+    + getUser() HTTP_GET
+    + postUser() HTTP_POST
+  }
+
+  class Perfil {
+    - idAdmin: UUID
+    - nome: String
+    - registroEmpresa: String
+    - PathAPI: String = "/perfil/{id}"
+    + getId() HTTP_GET
+    + deleteId() HTTP_DELETE
+  }
+
+  Login --> Perfil
+}
+
+package Monitoring {
+  class Dash {
+    - monitorSerial: List<String>
+    - monitorPlotter: Object
+    - telaCam: Object
+    + visaoCam(): ImageData
+    - PathAPI: String = "/dash"
+    + getDadosCam() HTTP_GET
+    + getDadosSerial() HTTP_GET
+    + getDadosPlotter() HTTP_GET
+  }
+
+  class GuardarDados {
+    - PathAPI: String = "/dados"
+    + getDados() HTTP_GET
+    + postDados(dados: Object) HTTP_POST
+  }
+
+  Perfil --> Dash
+  GuardarDados --> Perfil
+}
+
+package Sistema1 {
+  class ControleManual {
+    - joystick: Joystick
+    - buttons: List<Button>
+  }
+
+  class Sistema2 {}
+
+  class Atirador {
+    - atirar: Boolean
+    + atirarArma() HTTP_POST
+  }
+
+  ControleManual --> Sistema2
+  Sistema2 --> Atirador
+  Atirador --> ControleManual
+
+  package Sistema2 {
+    class Controle {
+      - PID: Script
+      - PathAPI: String = "/controle"
+      + postPID() HTTP_POST
+    }
+
+    class Planta {
+      - atuadores: List<String>
+      - PathAPI: String = "/planta"
+      + getAtuador() HTTP_GET
+      + postAtuador(atuador: String) HTTP_POST
+    }
+
+    class Sensor {
+      - sensor: List<String>
+      - PathAPI: String = "/sensor"
+      + getSensor() HTTP_GET
+      + postSensor(sensor: String) HTTP_POST
+    }
+
+    Controle --> Planta
+    Planta --> Sensor
+    Sensor --> Controle
+  }
+}
+
+Authentication --> Monitoring
+Dash --> Sistema1
+Sistema1 --> GuardarDados
+
+@enduml
