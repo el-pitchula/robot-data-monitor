@@ -17,7 +17,7 @@
 
 ## 🔭 Overview
 
-Describe briefly the focus of the project, emphasizing the software architecture aspects and the goal of monitoring data from a robot with an attached weapon.
+(...)
 
 ## 💻 Technologies
 
