@@ -1,0 +1,60 @@
+{
+    "info": {
+      "_postman_id": "unique-id-generated-by-postman",
+      "name": "Robot API",
+      "description": "Collection of requests for the Robot API, which manages robot and user data.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get Robot Data",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "body": {},
+          "url": {
+            "raw": "https://robot-api.com/api/robots/1",
+            "host": [
+              "robot-api.com"
+            ],
+            "path": [
+              "api",
+              "robots",
+              "1"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Update Robot Status",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n\t\"status\": \"active\"\n}"
+          },
+          "url": {
+            "raw": "https://robot-api.com/api/robots/1/status",
+            "host": [
+              "robot-api.com"
+            ],
+            "path": [
+              "api",
+              "robots",
+              "1",
+              "status"
+            ]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
