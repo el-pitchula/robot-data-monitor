@@ -17,7 +17,14 @@
 
 ## 🔭 Overview
 
-(...)
+The Robot API project is designed to manage and interact with robotic systems, providing functionalities for monitoring robot statuses and managing user data. It aims to facilitate seamless integration and control of robotic operations through a RESTful API. This repository includes essential endpoints for retrieving robot data, updating statuses, and managing user information.
+
+Key Features:
+- Retrieve detailed information about individual robots.
+- Update the operational status of robots (e.g., activate, deactivate).
+- Manage user profiles and access permissions within the system.
+
+This repository serves as a foundation for developing applications that interface with robotic systems, offering flexibility and scalability for various robotic applications.
 
 ## 💻 Technologies
 
